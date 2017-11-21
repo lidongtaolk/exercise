@@ -1,0 +1,155 @@
+<!Doctype html>
+<?php
+setcookie("user","lidongtao",time()+3600);
+?>
+<html>
+   <head>
+       <title>新手留言板</title>
+       <meta http-equiv="content-Type" content="text/html;charset=utf-8"/>
+	   <script src="http://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">;</script>
+	   <script type="text/javascript">
+	   $(document).ready(function{$("#mainmenu").mouseover(function(){
+	      $("#mainmenu>ul").slidedown();
+	   })});
+	   </script>
+	   <style type="text/css">
+	   body{
+	       height:1386px;
+		   width:900px;
+		   padding:0px;
+		   margin:0 auto;
+	   }
+	   h1{
+	       text-align:center;
+	   }
+	   /**
+	     *菜单
+	     **/
+	   #topmenu{
+	           height:30px;
+			   width:90%;
+			   margin:0;
+			   padding:0;
+			   position:relative;
+	   }
+	   #topmenu ul{
+	           margin:0;
+			   padding:0;
+			   position:absolute;
+			   height:100;
+			   list-style-type:none;/*删除项目符号*/
+			   overflow:visible;
+	   }
+	   #mainmenu{
+	           left:165px;/*定位*/
+	   }
+	   #topmenu ul>li{
+	           float:left;/*使元素在nav元素内横向排列*/
+			   height:auto;
+			   width:120px;/*定义菜单item的width*/
+			   text-align:center;
+			   display:block;
+			   background-color:#eeeeee;
+	   }
+	   /*调整链接字体和元素大小*/
+	   #topmenu li>a{
+	           display:block;
+			   height:100%;
+			   width:109px;
+			   line-height:30px;
+			   font-family:sans-serif;
+			   font-size:17px;
+			   text-decoration:none;
+			   color:#5d5636;
+	   }
+	   /*动态调整链接字体颜色*/
+	   #topmenu li>a:hover,
+	   #topmenu>ul li:hover{
+	           color:blue;
+			   background-color:#5d5656;
+	   }
+	   #topmenu li>a:active,
+	   #topmenu>ul li:active{
+	           color:green;
+			   background-color:#5d5636;
+	   }
+	   /*设置嵌套列表样式*/
+	   #topmenu ul ul{
+	           margin-top:2px;
+			   height:auto;
+			   width:109px;
+			   position:static;
+			   background-color:#dddddd;
+			   display:none;
+	   }
+	   /*微调*/
+	   #topmenu ul ul li{
+	           margin-top:2px;
+			   float:none;
+			   display:block;
+			   height:28px;
+			   width:100%;
+			   border:none;
+	   }
+	   
+	   
+	   /**
+	     *消除浮动
+		 **/
+	   #topmenu:before,
+	   #topmenu:after{
+	           content:"";
+			   display:table;
+	   }
+	   #topmenu:after{
+	           clear:both;
+	   }
+	   
+	   
+	   article{
+	           margin-top:100px;
+	   }
+	   
+	   </style>
+   </head>
+   <body>
+       <header>
+	         <h1>新手留言板</h1>
+	         <nav id="topmenu">
+	              <ul id="mainmenu">
+	                  <li><a href="/倒计时终稿！！！">Home</a></li>
+			          <li><a href="/倒计时终稿！！！">Products</a>
+					      <ul>
+						      <li>1</li>
+							  <li>2</li>
+						  </ul>
+					  </li>
+			          <li><a href="/倒计时终稿！！！">倒计时</a>
+					      <ul>
+						      <li>1</li>
+							  <li>2</li>
+							  <li>3</li>
+							  <li>4</li>
+						  </ul>
+					  </li>
+			          <li><a href="/倒计时终稿！！！">Contact</a>
+					      <ul>
+						      <li>1</li>
+						  </ul>
+					  </li>
+	              </ul>
+	         </nav>
+	   </header>
+       
+	   
+	   <article>
+	        <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+		       <label for="username">用户名</label><input type="text" id="username"/>
+               <label for="passward">密码</label><input type="passward" id="passward"/>			   
+			</form>
+	   </article>
+       
+	   
+	   <footer></footer>
+   </body>
+</html>
